@@ -10,8 +10,10 @@ This repository contains the starter code for testing the waferscale processor.
 
 # ELF Code Compilation
 1) Download ECLIPSE Studio
-2) Create a new C/C++ project, pick C++ Managed Build
-3) Create an empty project and when prompted to select toolchain, pick `GNU Tools for ARM Embedded Processors (arm-none-eabi-gcc)` (need to find download link)
-4) Copy and paste all folders in demo code (`Ring_Comm`) into project directory
-5) Click build and run the program
-6) Upload the code as `H.elf` onto the mbed board
+2) Follow the steps in the <a href="https://gnu-mcu-eclipse.github.io/tutorials/hello-arm/">Eclipse project tutorial</a>
+5) Replace all the files using demo code (`Ring_Comm`)
+6) Click build and run the program
+7) Upload the code as `H.elf` onto the mbed board
+
+# Running
+After following the setup steps, connect to the mbed board and read the results using any serial reader.
