@@ -775,7 +775,7 @@ int JTAG::PowerupDAP()
     while (readAPACC(AP_IDR) != 0x24770011) {
         writeBanksel(0xf);
     }
-    pc.printf("DAP Activated\r\n");
+    // pc.printf("DAP Activated\r\n");
     return 0;
    //dual_printf("DAP Activated");
 }
@@ -810,11 +810,11 @@ void JTAG::setIR(unsigned char A)
         char one = 0;
         if (core_op[n] == 1) {
             one = shiftBits(A, 4);
-            //pc.printf("core %d IR set to %x\r\n", n, A);
+            // pc.printf("core %d IR set to %x\r\n", n, A);
         } else {
             one = shiftBits(JTAG_BYPASS, 4);
             //one = shiftBits(A, 4);
-            pc.printf("core %d IR set to BYPASS\r\n", n);
+            // pc.printf("core %d IR set to BYPASS\r\n", n);
             
         }
         if (one != 1) {
@@ -914,13 +914,13 @@ unsigned int JTAG::readID(void)
     for (n=num_cores-1; n>=0; n=n-1) {
         if (core_op[n] == 1) {
             id = shiftBits(0, 32);
-            pc.printf("[readID] core %d: ID=%x\r\n", n, id);
+            // pc.printf("[readID] core %d: ID=%x\r\n", n, id);
             if (id != 0x4ba00477) {
                 pc.printf("core %d: ID=%x\r\n", n, id);
             }
         } else {
             shiftBits(0, 1);
-            pc.printf("[readID] core %d bypassed\r\n", n);
+            // pc.printf("[readID] core %d bypassed\r\n", n);
         }
         
     }
@@ -1257,7 +1257,7 @@ void JTAG::setCurrTileID(int y)
     //curr_tile_x = x;
     curr_tile_y = y;
     //pc.printf("[JTAG] curr_tile_x = %d, curr_tile_y = %d\r\n", curr_tile_x, curr_tile_y);
-    pc.printf("[JTAG] curr_tile_y = %d\r\n", curr_tile_y);
+    // pc.printf("[JTAG] curr_tile_y = %d\r\n", curr_tile_y);
 }
 
 void JTAG::setNumCores(int n)

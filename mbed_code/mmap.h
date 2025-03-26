@@ -2,7 +2,7 @@
 #define IMEM_MIN 0x00000000
 #define IMEM_MAX 0x00004000
 #define DMEM_MIN 0x20000000
-#define DMEM_MAX 0x20004000
+#define DMEM_MAX 0x20004000 //maybe private memory
 
 #define ICODE_MIN 0x20000000
 #define ICODE_MAX 0x20003FFF
